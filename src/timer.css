@@ -1,0 +1,27 @@
+.timer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .time {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 80px;
+  }
+  .time-text {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+      color: grey;
+      width: 290px;
+      justify-content: space-around;
+  }
+  
+  
+  
+  
+  
+  
