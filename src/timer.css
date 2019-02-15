@@ -19,6 +19,23 @@
       width: 290px;
       justify-content: space-around;
   }
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 8px;
+    width: 100px;
+    padding: 5px;
+    
+    
+  }
+  .button-flex{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    justify-content: space-around;
+  }
   
   
   
