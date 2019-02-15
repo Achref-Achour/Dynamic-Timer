@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './timer.css';
 
-var v=754210;
-
 function Timercalcul(props) {
   var x=props.val;
   
@@ -13,26 +11,58 @@ function Timercalcul(props) {
    
        return (
         <div className="time">
-            <div>{vs}</div>
+            <div>{String(vh).padStart(2, "0")}</div>
             <div>:</div>
-            <div>{vm}</div>
+            <div>{String(vm).padStart(2, "0")}</div>
             <div>:</div>
-            <div>{vh}</div>
+            <div>{String(vs).padStart(2, "0")}</div>
         </div>
        )}
-   
 
 
-class Timer extends Component {
+
+class Timer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      timer: 0,
+      status:false,
+    }
+                   
+                        setInterval(
+                        () => {
+                          if (this.state.status){
+                            // this.state.timer ++
+                            this.setState({
+                              timer: this.state.timer + 1000
+                            })
+                        }},
+                        1000
+                        )
+                      }
+
+                          StateChange =
+                            () => { 
+                              this.setState({status: !this.state.status})
+                            }
+                          StateReset =
+                          () => { 
+                            this.setState({timer: 0,status:false})
+                          }
+  
   render() {
     return (
       <div className="timer">
-        <Timercalcul val={v}/>
+        <Timercalcul val={this.state.timer}/>
         <div className="time-text">
                   <div className="text">Hour</div>
                   <div className="text">Minute</div>
                   <div className="text">Second</div>
         </div>
+          <div className="button-flex">
+                <div><button onClick={this.StateChange} className="button5">Pause</button></div>
+                <div><button onClick={this.StateReset} className="button5">Reset</button></div>
+          </div>
       </div>
     );
   }
